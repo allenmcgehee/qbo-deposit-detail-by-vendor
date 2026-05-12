@@ -146,8 +146,7 @@ def extract_matching_lines(
                 continue
             detail = line.get("DepositLineDetail") or {}
             entity = detail.get("Entity") or {}
-            entity_ref = entity.get("EntityRef") or {}
-            if entity_ref.get("value") != vendor_id:
+            if entity.get("value") != vendor_id:
                 continue
             rows.append(
                 {
